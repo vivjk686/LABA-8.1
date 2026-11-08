@@ -1,0 +1,14 @@
+VSTest version 18.10.0 (x64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+  Passed TestIsInBasic [< 1 ms]
+  Passed TestCountChar [2 ms]
+  Passed TestCountBasicChars [< 1 ms]
+  Passed TestIsBasicWord [< 1 ms]
+  Passed TestChange [< 1 ms]
+
+Test Run Successful.
+Total tests: 5
+     Passed: 5
+ Total time: 0.3156 Seconds

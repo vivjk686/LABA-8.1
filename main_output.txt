@@ -1,0 +1,16 @@
+Enter string:
+Hello BASIC world! BASIC rocks.
+
+--- Recursive String Processing (Variant 32) ---
+Initial string: Hello BASIC world! BASIC rocks.
+
+1. Occurrences of characters from 'BASIC':
+   'B': 2
+   'A': 2
+   'S': 2
+   'I': 2
+   'C': 2
+   Total 'BASIC' characters: 10
+
+2. String after replacing 'BASIC' with 'Delphi':
+   Hello Delphi world! Delphi rocks.
