@@ -2,12 +2,12 @@ VSTest version 18.10.0 (x64)
 
 Starting test execution, please wait...
 A total of 1 test files matched the specified pattern.
-  Passed TestCountIndividualChars [< 1 ms]
-  Passed TestCountTotalBasicChars [< 1 ms]
+  Passed TestCountEachLetter [< 1 ms]
+  Passed TestCountZeroOccurrences [< 1 ms]
   Passed TestChangeNormal [< 1 ms]
   Passed TestChangeShortStrings [< 1 ms]
 
 Test Run Successful.
 Total tests: 4
      Passed: 4
- Total time: 0.3530 Seconds
+ Total time: 0.2956 Seconds

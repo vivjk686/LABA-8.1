@@ -11,27 +11,25 @@ namespace UnitTest81
     TEST_CLASS(UnitTest81)
     {
     public:
-        TEST_METHOD(TestCountIndividualChars)
+        TEST_METHOD(TestCountEachLetter)
         {
             const char* str = "BASIC and BASIC";
-            Assert::AreEqual(2, Count(str, 'B', 0));
-            Assert::AreEqual(2, Count(str, 'A', 0));
-            Assert::AreEqual(2, Count(str, 'S', 0));
-            Assert::AreEqual(2, Count(str, 'I', 0));
-            Assert::AreEqual(2, Count(str, 'C', 0));
-            Assert::AreEqual(0, Count(str, 'Z', 0));
+            // Кожна окрема функція підраховує відповідну букву зі слова BASIC
+            Assert::AreEqual(2, CountB(str, 0));
+            Assert::AreEqual(2, CountA(str, 0));
+            Assert::AreEqual(2, CountS(str, 0));
+            Assert::AreEqual(2, CountI(str, 0));
+            Assert::AreEqual(2, CountC(str, 0));
         }
 
-        TEST_METHOD(TestCountTotalBasicChars)
+        TEST_METHOD(TestCountZeroOccurrences)
         {
-            const char* str1 = "BASIC";
-            Assert::AreEqual(5, Count(str1, 0));
-
-            const char* str2 = "xyz 123";
-            Assert::AreEqual(0, Count(str2, 0));
-
-            const char* str3 = "BASIC-BASIC!";
-            Assert::AreEqual(10, Count(str3, 0));
+            const char* str = "HELLO WORLD 123";
+            Assert::AreEqual(0, CountB(str, 0));
+            Assert::AreEqual(0, CountA(str, 0));
+            Assert::AreEqual(0, CountS(str, 0));
+            Assert::AreEqual(0, CountI(str, 0));
+            Assert::AreEqual(0, CountC(str, 0));
         }
 
         TEST_METHOD(TestChangeNormal)
@@ -51,7 +49,7 @@ namespace UnitTest81
 
         TEST_METHOD(TestChangeShortStrings)
         {
-            // Тести на короткі рядки (менші за 5 символів), щоб гарантувати відсутність виходу за межі пам'яті
+            // Тести на рядки, коротші за 5 символів, щоб гарантувати відсутність виходу за межі пам'яті
             char* res1 = Change("BAS");
             Assert::AreEqual("BAS", res1);
             delete[] res1;
@@ -64,8 +62,8 @@ namespace UnitTest81
             Assert::AreEqual("", res3);
             delete[] res3;
 
-            char* res4 = Change("No words here");
-            Assert::AreEqual("No words here", res4);
+            char* res4 = Change("No words");
+            Assert::AreEqual("No words", res4);
             delete[] res4;
         }
     };

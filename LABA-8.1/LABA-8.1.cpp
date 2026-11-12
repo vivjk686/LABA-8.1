@@ -12,37 +12,80 @@
 
 using namespace std;
 
-// 1.1. Рекурсивна функція підрахунку кількості конкретного символу c
-int Count(const char* str, const char c, int i = 0)
+// 1. Окремі рекурсивні функції підрахунку для кожної літери зі слова "BASIC":
+
+// 1.1. Підрахунок кількості літер 'B'
+int CountB(const char* str, int i = 0)
 {
     if (str[i] != '\0')
     {
-        if (str[i] == c)
-            return 1 + Count(str, c, i + 1);
+        if (str[i] == 'B')
+            return 1 + CountB(str, i + 1);
         else
-            return Count(str, c, i + 1);
+            return CountB(str, i + 1);
     }
     else
         return 0;
 }
 
-// 1.2. Рекурсивна функція підрахунку сумарної кількості всіх символів зі слова "BASIC"
-// Перевіряє входження кожної літери: 'B', 'A', 'S', 'I', 'C'
-int Count(const char* str, int i = 0)
+// 1.2. Підрахунок кількості літер 'A'
+int CountA(const char* str, int i = 0)
 {
     if (str[i] != '\0')
     {
-        if (str[i] == 'B' || str[i] == 'A' || str[i] == 'S' || str[i] == 'I' || str[i] == 'C')
-            return 1 + Count(str, i + 1);
+        if (str[i] == 'A')
+            return 1 + CountA(str, i + 1);
         else
-            return Count(str, i + 1);
+            return CountA(str, i + 1);
+    }
+    else
+        return 0;
+}
+
+// 1.3. Підрахунок кількості літер 'S'
+int CountS(const char* str, int i = 0)
+{
+    if (str[i] != '\0')
+    {
+        if (str[i] == 'S')
+            return 1 + CountS(str, i + 1);
+        else
+            return CountS(str, i + 1);
+    }
+    else
+        return 0;
+}
+
+// 1.4. Підрахунок кількості літер 'I'
+int CountI(const char* str, int i = 0)
+{
+    if (str[i] != '\0')
+    {
+        if (str[i] == 'I')
+            return 1 + CountI(str, i + 1);
+        else
+            return CountI(str, i + 1);
+    }
+    else
+        return 0;
+}
+
+// 1.5. Підрахунок кількості літер 'C'
+int CountC(const char* str, int i = 0)
+{
+    if (str[i] != '\0')
+    {
+        if (str[i] == 'C')
+            return 1 + CountC(str, i + 1);
+        else
+            return CountC(str, i + 1);
     }
     else
         return 0;
 }
 
 // 2. Рекурсивна функція заміни слова "BASIC" на "Delphi"
-// Безпечна робота з пам'яттю:
+// Безпечна робота з пам'яттю за зразком методички (стор. 102):
 // Умова if (str[i + 4] != 0) гарантує, що індекси від i до i+4 існують
 // і ми не виходимо за межі рядка.
 char* Change(char* dest, const char* str, char* t, int i = 0)
@@ -103,14 +146,21 @@ int main()
     cout << "\n--- Lab 8.1 (Recursive) Variant 32 ---" << endl;
     cout << "Initial string: " << str << endl;
 
-    // 1. Підрахунок кількості кожного символу зі слова "BASIC"
-    cout << "\n1. Occurrences of characters from 'BASIC':" << endl;
-    cout << "   'B': " << Count(str, 'B', 0) << endl;
-    cout << "   'A': " << Count(str, 'A', 0) << endl;
-    cout << "   'S': " << Count(str, 'S', 0) << endl;
-    cout << "   'I': " << Count(str, 'I', 0) << endl;
-    cout << "   'C': " << Count(str, 'C', 0) << endl;
-    cout << "   Total characters ('B','A','S','I','C'): " << Count(str, 0) << endl;
+    // 1. Окремий підрахунок для КОЖНОЇ літери зі слова "BASIC":
+    int countB = CountB(str, 0);
+    int countA = CountA(str, 0);
+    int countS = CountS(str, 0);
+    int countI = CountI(str, 0);
+    int countC = CountC(str, 0);
+    int total = countB + countA + countS + countI + countC;
+
+    cout << "\n1. Occurrences of each character from 'BASIC':" << endl;
+    cout << "   'B': " << countB << endl;
+    cout << "   'A': " << countA << endl;
+    cout << "   'S': " << countS << endl;
+    cout << "   'I': " << countI << endl;
+    cout << "   'C': " << countC << endl;
+    cout << "   Total ('B','A','S','I','C'): " << total << endl;
 
     // 2. Заміна "BASIC" на "Delphi"
     // Виділення динамічної пам'яті за формулою методички:

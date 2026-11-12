@@ -4,13 +4,13 @@ Hello BASIC world! BASIC rocks.
 --- Lab 8.1 (Recursive) Variant 32 ---
 Initial string: Hello BASIC world! BASIC rocks.
 
-1. Occurrences of characters from 'BASIC':
+1. Occurrences of each character from 'BASIC':
    'B': 2
    'A': 2
    'S': 2
    'I': 2
    'C': 2
-   Total characters ('B','A','S','I','C'): 10
+   Total ('B','A','S','I','C'): 10
 
 2. Modified string (param) : Hello Delphi world! Delphi rocks.
    Modified string (result): Hello Delphi world! Delphi rocks.
