@@ -11,20 +11,6 @@ namespace UnitTest81
     TEST_CLASS(UnitTest81)
     {
     public:
-        TEST_METHOD(TestIsInBasic)
-        {
-            Assert::IsTrue(IsInBasic('B'));
-            Assert::IsTrue(IsInBasic('A'));
-            Assert::IsTrue(IsInBasic('S'));
-            Assert::IsTrue(IsInBasic('I'));
-            Assert::IsTrue(IsInBasic('C'));
-
-            Assert::IsFalse(IsInBasic('b'));
-            Assert::IsFalse(IsInBasic('x'));
-            Assert::IsFalse(IsInBasic(' '));
-            Assert::IsFalse(IsInBasic('1'));
-        }
-
         TEST_METHOD(TestCountChar)
         {
             const char* str = "BASIC and BASIC";
@@ -34,10 +20,9 @@ namespace UnitTest81
             Assert::AreEqual(2, Count(str, 'I', 0));
             Assert::AreEqual(2, Count(str, 'C', 0));
             Assert::AreEqual(0, Count(str, 'Z', 0));
-            Assert::AreEqual(2, CountChar(str, 'B', 0));
         }
 
-        TEST_METHOD(TestCountBasicWord)
+        TEST_METHOD(TestCountWord)
         {
             Assert::AreEqual(1, Count("Learn BASIC now", 0));
             Assert::AreEqual(2, Count("BASIC and BASIC", 0));
@@ -45,27 +30,21 @@ namespace UnitTest81
             Assert::AreEqual(0, Count("BAS", 0));
         }
 
-        TEST_METHOD(TestCountBasicChars)
+        TEST_METHOD(TestChangeDirectWithMinimalMemory)
         {
-            const char* str1 = "BASIC";
-            Assert::AreEqual(5, CountBasicChars(str1, 0));
+            const char* str = "BASIC and BASIC";
+            int count = Count(str, 0);
+            size_t minSize = strlen(str) + count * 1 + 1;
+            char* dest1 = new char[minSize];
+            dest1[0] = '\0';
+            char* dest2 = Change(dest1, str, dest1, 0);
 
-            const char* str2 = "xyz 123";
-            Assert::AreEqual(0, CountBasicChars(str2, 0));
-
-            const char* str3 = "BASIC-BASIC!";
-            Assert::AreEqual(10, CountBasicChars(str3, 0));
+            Assert::AreEqual("Delphi and Delphi", dest1);
+            Assert::AreEqual("Delphi and Delphi", dest2);
+            delete[] dest1;
         }
 
-        TEST_METHOD(TestIsBasicWord)
-        {
-            const char* str = "Learn BASIC now";
-            Assert::IsTrue(IsBasicWord(str, 6, 0));
-            Assert::IsFalse(IsBasicWord(str, 0, 0));
-            Assert::IsFalse(IsBasicWord("BASIS", 0, 0));
-        }
-
-        TEST_METHOD(TestChange)
+        TEST_METHOD(TestChangeWrapper)
         {
             char* res1 = Change("I like BASIC language");
             Assert::AreEqual("I like Delphi language", res1);
@@ -82,21 +61,6 @@ namespace UnitTest81
             char* res4 = Change("BASIC");
             Assert::AreEqual("Delphi", res4);
             delete[] res4;
-        }
-
-        TEST_METHOD(TestChangeDirectWithMinimalMemory)
-        {
-            const char* str = "BASIC and BASIC";
-            int count = Count(str, 0);
-            // Виділення щонайменше пам'яті: точна довжина + 1 байт на '\0'
-            size_t minSize = strlen(str) + count * 1 + 1;
-            char* dest1 = new char[minSize];
-            dest1[0] = '\0';
-            char* dest2 = Change(dest1, str, dest1, 0);
-
-            Assert::AreEqual("Delphi and Delphi", dest1);
-            Assert::AreEqual("Delphi and Delphi", dest2);
-            delete[] dest1;
         }
     };
 }

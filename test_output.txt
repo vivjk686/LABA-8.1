@@ -2,15 +2,12 @@ VSTest version 18.10.0 (x64)
 
 Starting test execution, please wait...
 A total of 1 test files matched the specified pattern.
-  Passed TestIsInBasic [< 1 ms]
-  Passed TestCountChar [4 ms]
-  Passed TestCountBasicWord [< 1 ms]
-  Passed TestCountBasicChars [< 1 ms]
-  Passed TestIsBasicWord [< 1 ms]
-  Passed TestChange [< 1 ms]
+  Passed TestCountChar [< 1 ms]
+  Passed TestCountWord [< 1 ms]
   Passed TestChangeDirectWithMinimalMemory [< 1 ms]
+  Passed TestChangeWrapper [< 1 ms]
 
 Test Run Successful.
-Total tests: 7
-     Passed: 7
- Total time: 0.5300 Seconds
+Total tests: 4
+     Passed: 4
+ Total time: 0.3170 Seconds

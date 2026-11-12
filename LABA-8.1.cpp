@@ -13,11 +13,9 @@
 using namespace std;
 
 // ============================================================================
-// Пункт 1: Рекурсивні функції підрахунку входжень символів
+// 1. Рекурсивна функція: підраховує кількість входжень конкретного символу c у рядок str
+// (Методичка В.Г. Григоровича, стор. 61: int Count(const char* s, const char c, int i))
 // ============================================================================
-
-// Рекурсивна функція: підраховує кількість входжень конкретного символу c у рядок str
-// (Згідно з методичкою, стор. 61: int Count(const char* s, const char c, int i))
 int Count(const char* str, char c, int i = 0)
 {
     if (str[i] != '\0')
@@ -27,41 +25,13 @@ int Count(const char* str, char c, int i = 0)
         else
             return Count(str, c, i + 1);
     }
-    else
-        return 0;
-}
-
-// Псевдонім для сумісності з попередніми юніт-тестами
-int CountChar(const char* str, char c, int i = 0)
-{
-    return Count(str, c, i);
-}
-
-// Допоміжна рекурсивна функція: перевіряє, чи належить символ c слову "BASIC"
-bool IsInBasic(char c, const char* basic = "BASIC", int j = 0)
-{
-    if (basic[j] == '\0')
-        return false;
-    if (c == basic[j])
-        return true;
-    return IsInBasic(c, basic, j + 1);
-}
-
-// Рекурсивна функція: підраховує сумарну кількість входжень будь-якого символу з "BASIC"
-int CountBasicChars(const char* str, int i = 0)
-{
-    if (str[i] == '\0')
-        return 0;
-    if (IsInBasic(str[i], "BASIC", 0))
-        return 1 + CountBasicChars(str, i + 1);
-    else
-        return CountBasicChars(str, i + 1);
+    return 0;
 }
 
 // ============================================================================
-// Рекурсивна функція підрахунку входжень слова "BASIC"
-// (Згідно з методичкою, стор. 101: int Count(char* str, int i))
-// Необхідна для визначення мінімально необхідного обсягу пам'яті для заміни
+// 2. Рекурсивна функція: підраховує кількість входжень слова "BASIC" у рядок str
+// (Методичка В.Г. Григоровича, стор. 101: int Count(char* str, int i))
+// Визначає точну кількість груп для виділення мінімально необхідного обсягу пам'яті
 // ============================================================================
 int Count(const char* str, int i = 0)
 {
@@ -76,27 +46,14 @@ int Count(const char* str, int i = 0)
         else
             return Count(str, i + 1);
     }
-    else
-        return 0;
-}
-
-// Допоміжна функція перевірки слова "BASIC" на позиції i (для сумісності)
-bool IsBasicWord(const char* str, int i, int j = 0)
-{
-    if (j == 5)
-        return true;
-    if (str[i + j] == '\0')
-        return false;
-    if (str[i + j] != "BASIC"[j])
-        return false;
-    return IsBasicWord(str, i, j + 1);
+    return 0;
 }
 
 // ============================================================================
-// Пункт 2: Рекурсивна функція заміни "BASIC" на "Delphi"
-// (Згідно з методичкою, стор. 102: char* Change(char* dest, const char* str, char* t, int i))
+// 3. Рекурсивна функція заміни: замінює кожне слово "BASIC" на "Delphi"
+// (Методичка В.Г. Григоровича, стор. 102: char* Change(char* dest, const char* str, char* t, int i))
 // ============================================================================
-char* Change(char* dest, const char* str, char* t, int i)
+char* Change(char* dest, const char* str, char* t, int i = 0)
 {
     if (str[i] != '\0')
     {
@@ -120,15 +77,17 @@ char* Change(char* dest, const char* str, char* t, int i)
     }
 }
 
-// Перевантажена функція-обгортка для зручного виклику та модульного тестування
+// ============================================================================
+// 4. Функція-обгортка для автоматизованого тестування та зручного виклику
 // Виділяє ЩОНАЙМЕНШЕ пам'яті: точна довжина результату + 1 байт на '\0'
+// ============================================================================
 char* Change(const char* str)
 {
     size_t len = strlen(str);
     int count = Count(str, 0);
 
-    // Кожне слово "BASIC" (5 симв.) замінюється на "Delphi" (6 симв.), тобто +1 байт на входження
-    // Виділяємо рівно стільки пам'яті, скільки потрібно (без надлишку)
+    // Кожне слово "BASIC" (5 симв.) замінюється на "Delphi" (6 симв.) -> +1 байт на кожне входження
+    // Виділяємо рівно стільки пам'яті, скільки потрібно для результату:
     char* dest = new char[len + count * 1 + 1];
     dest[0] = '\0';
     return Change(dest, str, dest, 0);
@@ -150,18 +109,17 @@ int main()
     cout << "   'A': " << Count(str, 'A', 0) << endl;
     cout << "   'S': " << Count(str, 'S', 0) << endl;
     cout << "   'I': " << Count(str, 'I', 0) << endl;
-    cout << "   'C': " << Count(str, 'C', 0) << endl;
-    cout << "   Total 'BASIC' characters: " << CountBasicChars(str, 0) << endl;
+    cout << "   'C': " << Count(str, 'C', 0) << endl << endl;
 
+    // Підрахунок груп "BASIC"
     int basicCount = Count(str, 0);
     cout << "String contained " << basicCount << " groups of 'BASIC'" << endl << endl;
 
-    // Пункт 2: Заміна "BASIC" на "Delphi"
-    // Виділяємо ЩОНАЙМЕНШЕ пам'яті:
+    // Пункт 2: Заміна "BASIC" на "Delphi" (за методичкою, стор. 102)
+    // Виділяємо ЩОНАЙМЕНШЕ пам'яті (теоретичний мінімум без надлишку):
     // Початкова довжина: strlen(str)
     // Кожне слово "BASIC" (5) замінюється на "Delphi" (6) -> +1 символ на кожне входження
     // Додаємо 1 байт для завершального нуль-термінатора '\0'
-    // Мінімально необхідна пам'ять = strlen(str) + basicCount * 1 + 1
     size_t minMemory = strlen(str) + basicCount * 1 + 1;
     char* dest1 = new char[minMemory];
     dest1[0] = '\0';
