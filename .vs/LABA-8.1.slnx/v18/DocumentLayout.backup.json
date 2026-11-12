@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\OneDrive\\\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438\\\u043b\u0430\u0431\u0438\\LABA-8.1\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438\\\u043B\u0430\u0431\u0438\\LABA-8.1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A8100001-78B8-55BB-BD56-E786907859BF}|LABA-8.1\\LABA-8.1.vcxproj|C:\\Users\\User\\OneDrive\\\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438\\\u043b\u0430\u0431\u0438\\LABA-8.1\\LABA-8.1\\LABA-8.1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{A8100001-78B8-55BB-BD56-E786907859BF}|LABA-8.1\\LABA-8.1.vcxproj|C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438\\\u043B\u0430\u0431\u0438\\LABA-8.1\\LABA-8.1\\LABA-8.1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A8100001-78B8-55BB-BD56-E786907859BF}|LABA-8.1\\LABA-8.1.vcxproj|solutionrelative:LABA-8.1\\LABA-8.1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B8100002-C24F-5E88-83AD-EB350CB9AF59}|UnitTest8.1\\UnitTest8.1.vcxproj|C:\\Users\\User\\OneDrive\\\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438\\\u043b\u0430\u0431\u0438\\LABA-8.1\\UnitTest8.1\\UnitTest8.1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{B8100002-C24F-5E88-83AD-EB350CB9AF59}|UnitTest8.1\\UnitTest8.1.vcxproj|C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438\\\u043B\u0430\u0431\u0438\\LABA-8.1\\UnitTest8.1\\UnitTest8.1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B8100002-C24F-5E88-83AD-EB350CB9AF59}|UnitTest8.1\\UnitTest8.1.vcxproj|solutionrelative:UnitTest8.1\\UnitTest8.1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -24,11 +24,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "LABA-8.1.cpp",
-              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438\\\u043b\u0430\u0431\u0438\\LABA-8.1\\LABA-8.1\\LABA-8.1.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438\\\u043B\u0430\u0431\u0438\\LABA-8.1\\LABA-8.1\\LABA-8.1.cpp",
               "RelativeDocumentMoniker": "LABA-8.1\\LABA-8.1.cpp",
-              "ToolTip": "C:\\Users\\User\\OneDrive\\\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438\\\u043b\u0430\u0431\u0438\\LABA-8.1\\LABA-8.1\\LABA-8.1.cpp",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438\\\u043B\u0430\u0431\u0438\\LABA-8.1\\LABA-8.1\\LABA-8.1.cpp",
               "RelativeToolTip": "LABA-8.1\\LABA-8.1.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAqwJEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-11-08T13:00:00Z",
               "IsPinned": true,
@@ -38,14 +38,15 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "UnitTest8.1.cpp",
-              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438\\\u043b\u0430\u0431\u0438\\LABA-8.1\\UnitTest8.1\\UnitTest8.1.cpp",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438\\\u043B\u0430\u0431\u0438\\LABA-8.1\\UnitTest8.1\\UnitTest8.1.cpp",
               "RelativeDocumentMoniker": "UnitTest8.1\\UnitTest8.1.cpp",
-              "ToolTip": "C:\\Users\\User\\OneDrive\\\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0438\\\u043b\u0430\u0431\u0438\\LABA-8.1\\UnitTest8.1\\UnitTest8.1.cpp",
+              "ToolTip": "C:\\Users\\User\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u0438\\\u043B\u0430\u0431\u0438\\LABA-8.1\\UnitTest8.1\\UnitTest8.1.cpp",
               "RelativeToolTip": "UnitTest8.1\\UnitTest8.1.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-11-08T13:00:01Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",

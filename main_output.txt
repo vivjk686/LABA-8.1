@@ -1,7 +1,7 @@
 Enter string:
 Hello BASIC world! BASIC rocks.
 
---- Recursive String Processing (Variant 32) ---
+--- Lab 8.1 (Recursive) Variant 32 ---
 Initial string: Hello BASIC world! BASIC rocks.
 
 1. Occurrences of characters from 'BASIC':
@@ -10,8 +10,7 @@ Initial string: Hello BASIC world! BASIC rocks.
    'S': 2
    'I': 2
    'C': 2
+   Total characters ('B','A','S','I','C'): 10
 
-String contained 2 groups of 'BASIC'
-
-Modified string (param) : Hello Delphi world! Delphi rocks.
-Modified string (result): Hello Delphi world! Delphi rocks.
+2. Modified string (param) : Hello Delphi world! Delphi rocks.
+   Modified string (result): Hello Delphi world! Delphi rocks.
