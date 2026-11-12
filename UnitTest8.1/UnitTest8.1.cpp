@@ -28,12 +28,21 @@ namespace UnitTest81
         TEST_METHOD(TestCountChar)
         {
             const char* str = "BASIC and BASIC";
+            Assert::AreEqual(2, Count(str, 'B', 0));
+            Assert::AreEqual(2, Count(str, 'A', 0));
+            Assert::AreEqual(2, Count(str, 'S', 0));
+            Assert::AreEqual(2, Count(str, 'I', 0));
+            Assert::AreEqual(2, Count(str, 'C', 0));
+            Assert::AreEqual(0, Count(str, 'Z', 0));
             Assert::AreEqual(2, CountChar(str, 'B', 0));
-            Assert::AreEqual(2, CountChar(str, 'A', 0));
-            Assert::AreEqual(2, CountChar(str, 'S', 0));
-            Assert::AreEqual(2, CountChar(str, 'I', 0));
-            Assert::AreEqual(2, CountChar(str, 'C', 0));
-            Assert::AreEqual(0, CountChar(str, 'Z', 0));
+        }
+
+        TEST_METHOD(TestCountBasicWord)
+        {
+            Assert::AreEqual(1, Count("Learn BASIC now", 0));
+            Assert::AreEqual(2, Count("BASIC and BASIC", 0));
+            Assert::AreEqual(0, Count("No keywords here", 0));
+            Assert::AreEqual(0, Count("BAS", 0));
         }
 
         TEST_METHOD(TestCountBasicChars)
@@ -73,6 +82,21 @@ namespace UnitTest81
             char* res4 = Change("BASIC");
             Assert::AreEqual("Delphi", res4);
             delete[] res4;
+        }
+
+        TEST_METHOD(TestChangeDirectWithMinimalMemory)
+        {
+            const char* str = "BASIC and BASIC";
+            int count = Count(str, 0);
+            // Виділення щонайменше пам'яті: точна довжина + 1 байт на '\0'
+            size_t minSize = strlen(str) + count * 1 + 1;
+            char* dest1 = new char[minSize];
+            dest1[0] = '\0';
+            char* dest2 = Change(dest1, str, dest1, 0);
+
+            Assert::AreEqual("Delphi and Delphi", dest1);
+            Assert::AreEqual("Delphi and Delphi", dest2);
+            delete[] dest1;
         }
     };
 }
