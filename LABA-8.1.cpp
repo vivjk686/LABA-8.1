@@ -4,7 +4,9 @@
 // Пошук та заміна символів у літерному рядку
 // Варіант 32 (Рекурсивний спосіб)
 
+#ifndef _CRT_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
+#endif
 #include <iostream>
 #include <cstring>
 #include <iomanip>
